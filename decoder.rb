@@ -1,9 +1,8 @@
 KEY = {
 }
-
 KEY = {
   1 => 'A',
-  2 => 'A',
+  2 => 'B',
   3 => 'C',
   4 => 'D',
   5 => 'E',
@@ -12,7 +11,6 @@ KEY = {
   8 => 'H',
   9 => 'I',
 }
-
 # Define a method that takes an array of numbers to decode.
 def decode(numbers)
   text = ""
@@ -20,6 +18,11 @@ def decode(numbers)
   numbers.each do |number|
     # Get the letter that corresponds to this number.
     letter = KEY[number]
+    # If letter was found...
+  if letter != nil
+    # Add it onto the string.
+    text += letter
+  end
     # Add it onto the string.
     text += letter
   end
